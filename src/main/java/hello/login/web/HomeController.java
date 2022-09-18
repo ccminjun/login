@@ -31,10 +31,8 @@ public class HomeController {
         //로그인
         Member loginMember = memberRepository.findById(memberId);
         if(loginMember == null) {
-            log.info("하이");
-            return home();
+            return "home";
         }
-        log.info("지나가요");
         model.addAttribute("member", loginMember);
         return "loginHome";
     }
